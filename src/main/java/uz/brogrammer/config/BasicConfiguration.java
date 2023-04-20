@@ -15,7 +15,9 @@ public class BasicConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .requestMatchers("", "/","/admin/auth/**").permitAll()
+                .requestMatchers("/").permitAll()
+                .requestMatchers("").permitAll()
+                .requestMatchers("/admin/auth/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -26,9 +28,9 @@ public class BasicConfiguration {
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User
-                .withUsername("user")
+                .withUsername("admin")
                 .password(passwordEncoder().encode("password"))
-                .roles("USER_ROLE")
+                .roles("ADMIN_ROLE")
                 .build();
 
         return new InMemoryUserDetailsManager(user);

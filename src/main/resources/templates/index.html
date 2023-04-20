@@ -213,7 +213,7 @@ https://templatemo.com/tm-557-grad-school
               <h6>Keyingi darslarimiz qatnashish uchun ro'yhatdan o'ting.<br><em>Biz albatta sizga aloqaga chiqamiz!</em></h6>
 
             </div>
-            <form id="contact" th:action="@{/brogrammers-uz/create}" modelAttribute="registerCandidate" th:object="${registerCandidate}" method="post">
+            <form id="contact" th:action="@{/save-candidate}" modelAttribute="registerCandidate" th:object="${registerCandidate}" method="post">
               <div class="row">
                 <div class="col-md-12">
                   <select th:field="*{course_id}" >

@@ -1,6 +1,7 @@
 package uz.brogrammer.admin.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import uz.brogrammer.registration.service.CandidateService;
 import uz.brogrammer.registration.service.CourseService;
 
 @Controller
+@Secured("ADMIN_ROLE")
 @RequiredArgsConstructor
 @RequestMapping("/admin/auth")
 public class AdminController {
