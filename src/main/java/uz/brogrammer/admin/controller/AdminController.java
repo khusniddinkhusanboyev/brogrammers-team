@@ -13,7 +13,6 @@ import uz.brogrammer.registration.service.CandidateService;
 import uz.brogrammer.registration.service.CourseService;
 
 @Controller
-@Secured("ADMIN_ROLE")
 @RequiredArgsConstructor
 @RequestMapping("/admin/auth")
 public class AdminController {
@@ -25,15 +24,15 @@ public class AdminController {
     /*add new Admin */
     @GetMapping("/new-admin")
     public String newAdmin(Model model) {
-        model.addAttribute("adminList" ,adminService.admins());
+
         model.addAttribute("newAdmin", new Admin());
         return "admin/admin-registration.html";
     }
     @PostMapping("/save-admin")
-    public String saveAdmin(@ModelAttribute("newAdmin") Admin admin,Model model) {
+    public String saveAdmin(@ModelAttribute("newAdmin") Admin admin) {
         adminService.create(admin);
 
-        return "redirect:/brogrammers-uz/new-admin";
+        return "redirect:/login";
     }
 
     @GetMapping("/remove-admin/{id}")

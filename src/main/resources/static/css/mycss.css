@@ -1,0 +1,12 @@
+.my-menu {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: 0;
+  padding-bottom: 30px;
+  color: #cc1818;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
