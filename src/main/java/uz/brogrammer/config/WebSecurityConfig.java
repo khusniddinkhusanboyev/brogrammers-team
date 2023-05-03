@@ -32,8 +32,8 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                 .roles("USER")
                 .build();
 
-        UserDetails admin = User.withUsername("admin")
-                .password(passwordEncoder.encode("admin"))
+        UserDetails admin = User.withUsername("khasanboy")
+                .password(passwordEncoder.encode("akbarov"))
                 .roles("USER", "ADMIN")
                 .build();
 

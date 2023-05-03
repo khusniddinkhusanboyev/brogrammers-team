@@ -97,7 +97,7 @@
 	    }
 	  },1000);
 	}
-	initializeClock(new Date().getFullYear() + "/04/24")
+	initializeClock(new Date().getFullYear() + "/06/01")
 	})()
 
 })(jQuery);
