@@ -23,10 +23,11 @@ public class LoginController {
     private final AdminService adminService;
 
 
-    @RequestMapping(value = {"/login"} , method = RequestMethod.GET)
-    public String home(){
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    public String home() {
         return "security/login.html";
     }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(
             @RequestParam("username") String username,
@@ -34,23 +35,13 @@ public class LoginController {
             Model model) {
         Authentication authentication =
                 new UsernamePasswordAuthenticationToken(username, password);
-        System.err.println("authentication"+authentication.getPrincipal());
-        System.err.println("authentication"+authentication.isAuthenticated());
+        System.err.println("authentication" + authentication.getPrincipal());
+        System.err.println("authentication" + authentication.isAuthenticated());
         AuthenticationManager authenticationManager =
                 (AuthenticationManager) SecurityContextHolder.getContext().getAuthentication();
         Authentication result = authenticationManager.authenticate(authentication);
         SecurityContextHolder.getContext().setAuthentication(result);
         return "redirect:/admin/auth/candidates";
     }
-   /* @RequestMapping(value = {"/valid"} , method = RequestMethod.POST)
-    public String login(@RequestParam("username")String username, @RequestParam("password") String password , RedirectAttributes massage){
-        for (Admin admin: adminService.admins()){
-            if (admin.getPassword().equals(password) && admin.getUsername().equals(username)){
-                return "redirect:/admin/auth/candidates";
-            }
-        }
-        massage.addFlashAttribute("warning","password or username is wrong. please try again... ");
-        return "redirect:/login";
-    }
-*/
+
 }
