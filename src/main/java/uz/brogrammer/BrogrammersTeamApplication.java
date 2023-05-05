@@ -26,6 +26,9 @@ public class BrogrammersTeamApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		courseService.addCourse(Course.builder().id(1).courseTitle("Java Web Backend").days("Monday, Wednesday,Saturday").time("6 pm").build());
+		courseService.addCourse(Course.builder().id(2).courseTitle("Android").days("xxxxx, xxxxx,xxxxx").time("xxxxx pm or am").build());
+		courseService.addCourse(Course.builder().id(3).courseTitle("Kompyuter Savodxonligi").days("xxxxx, xxxxx,xxxxx").time("xxxxx pm or am").build());
+		courseService.addCourse(Course.builder().id(4).courseTitle("Web Front End").days("xxxxx, xxxxx,xxxxx").time("xxxxx pm or am").build());
 	}
 }
 

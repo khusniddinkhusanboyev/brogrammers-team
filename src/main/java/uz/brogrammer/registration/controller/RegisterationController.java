@@ -29,6 +29,6 @@ public class RegisterationController {
 
         candidateService.create(candidate);
 
-        return "redirect:/";
+        return "redirect:/success";
     }
 }
