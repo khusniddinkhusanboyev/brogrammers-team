@@ -61,7 +61,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                         "/js/**",
                         "/images/**"
                  ).permitAll()
-                .requestMatchers("/login","/").permitAll()
+                .requestMatchers("/","/login").permitAll()
                 .requestMatchers("/admin/auth/candidates").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
