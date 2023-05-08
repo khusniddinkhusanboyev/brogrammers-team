@@ -14,12 +14,19 @@ import uz.brogrammer.registration.service.CourseService;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/admin/auth")
+@RequestMapping("/admin")
 public class AdminController {
 
     private final AdminService adminService;
     private final CandidateService candidateService;
     private final CourseService courseService;
+    /*manage candidate list */
+
+    @GetMapping
+    public String candidates(Model model) {
+        model.addAttribute("candidateList", candidateService.candidates());
+        return "admin/admin-candidate-list.html";
+    }
 
     /*add new Admin */
     @GetMapping("/new-admin")
@@ -41,13 +48,7 @@ public class AdminController {
         return "redirect:/brogrammers-uz/new-admin";
     }
 
-    /*manage candidate list */
 
-    @GetMapping("/candidates")
-    public String candidates(Model model) {
-        model.addAttribute("candidateList", candidateService.candidates());
-        return "admin/admin-candidate-list.html";
-    }
 
     @GetMapping("remove/{id}")
     public String removeCandidate(@PathVariable("id") Integer id) {

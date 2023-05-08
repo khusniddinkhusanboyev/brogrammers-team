@@ -145,7 +145,7 @@ button{
     <div class="shape"></div>
     <div class="shape"></div>
 </div>
-<form   th:action="@{/admin/auth/save-admin}" modelAttribute="newAdmin" th:object="${newAdmin}" method="post">
+<form   th:action="@{/admin/save-admin}" modelAttribute="newAdmin" th:object="${newAdmin}" method="post">
     <h2>Sign up</h2>
 
     <label for="username">Username</label>
@@ -156,7 +156,7 @@ button{
 
     <button>Register</button>
     <div class="social">
-        <a  class="btn btn-outline-success" href="/admin/auth/new-admin">sign up</a>
+        <a  class="btn btn-outline-success" href="/admin/new-admin">sign up</a>
         <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
     </div>
 </form>

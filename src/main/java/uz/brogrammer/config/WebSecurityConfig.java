@@ -62,13 +62,13 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                         "/images/**"
                  ).permitAll()
                 .requestMatchers("/","/login").permitAll()
-                .requestMatchers("/admin/auth/candidates").hasRole("ADMIN")
+                .requestMatchers("/admin","/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/admin/auth/candidates")
+                .defaultSuccessUrl("/admin")
                 .loginProcessingUrl("/login");
         return http.build();
     }
