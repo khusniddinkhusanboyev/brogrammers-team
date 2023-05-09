@@ -45,7 +45,7 @@ public class AdminController {
     @GetMapping("/remove-admin/{id}")
     public String removeAdmin(@PathVariable("id") Integer id){
         adminService.removeAdmin(id);
-        return "redirect:/brogrammers-uz/new-admin";
+        return "redirect:/admin/new-admin";
     }
 
 
@@ -53,7 +53,7 @@ public class AdminController {
     @GetMapping("remove/{id}")
     public String removeCandidate(@PathVariable("id") Integer id) {
         candidateService.removeById(id);
-        return "redirect:/brogrammers-uz/candidates";
+        return "redirect:/admin";
     }
 
     /*control of courses*/
@@ -67,7 +67,7 @@ public class AdminController {
     @PostMapping("/save-course")
     public String saveNewCourse(@ModelAttribute("newCourse") Course course, Model model) {
         courseService.addCourse(course);
-        return "redirect:/brogrammers-uz/new-course";
+        return "redirect:/admin/new-course";
     }
 
     @GetMapping("/edit/{id}")
@@ -79,19 +79,19 @@ public class AdminController {
             return "admin/admin-edit-existing-course.html";
         }
         message.addFlashAttribute("error", "this course is not available...");
-        return "redirect:/redirect:/brogrammers-uz/new-course";
+        return "redirect:/admin/new-course";
     }
 
     @PostMapping("/updated")
     public String updated(@ModelAttribute("oldCase") Course course) {
         courseService.addCourse(course);
-        return "redirect:/brogrammers-uz/new-course";
+        return "redirect:/admin/new-course";
     }
 
     @GetMapping("remove-course/{id}")
     public String removeCourse(@PathVariable("id") Integer id) {
         courseService.removeById(id);
-        return "redirect:/brogrammers-uz/new-course";
+        return "redirect:/admin/new-course";
         }
 
 
