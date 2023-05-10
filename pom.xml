@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>uz.brogrammer</groupId>
 	<artifactId>brogrammers-team</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>brogrammers-team</name>
 	<description>this project is created for company colled brogremmers </description>
 	<properties>

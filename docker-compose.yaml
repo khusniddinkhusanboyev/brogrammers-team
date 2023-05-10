@@ -15,11 +15,10 @@ services:
     networks:
       [brogrammers-team-net]
 
-
   app-server:
     container_name: brogrammers-team
     build:
-      context: ./
+      context: /
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -32,7 +31,6 @@ services:
       SPRING_DATASOURCE_PASSWORD: BrogrammersMe10
     networks:
       - brogrammers-team-net
-
 
 networks:
   brogrammers-team-net:
