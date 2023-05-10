@@ -23,8 +23,6 @@ public class Course {
     private String courseTitle;
     private String days;
     private String time;
-    @ManyToMany
-    private Set<Candidate> candidates=new HashSet<>();
 
 
 

@@ -25,7 +25,7 @@ public class LoginController {
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String home() {
-        return "security/login.html";
+        return "security/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -41,7 +41,7 @@ public class LoginController {
                 (AuthenticationManager) SecurityContextHolder.getContext().getAuthentication();
         Authentication result = authenticationManager.authenticate(authentication);
         SecurityContextHolder.getContext().setAuthentication(result);
-        return "redirect:/admin/auth/candidates";
+        return "redirect:/admin/candidates";
     }
 
 }

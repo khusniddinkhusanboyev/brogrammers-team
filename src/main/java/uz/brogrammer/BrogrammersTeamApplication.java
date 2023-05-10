@@ -13,7 +13,6 @@ import uz.brogrammer.securety.model.User;
 import uz.brogrammer.securety.repository.UserRepository;
 
 @SpringBootApplication
-@ComponentScan("uz.brogrammer")
 @RequiredArgsConstructor
 public class BrogrammersTeamApplication implements CommandLineRunner {
 	private final CourseService courseService;

@@ -12,13 +12,12 @@ import uz.brogrammer.registration.service.CandidateService;
 import uz.brogrammer.registration.service.CourseService;
 
 @Controller
-@RequestMapping("/")
 @RequiredArgsConstructor
 public class RegisterationController {
     private final CandidateService candidateService;
     private final CourseService courseService;
 
-    @GetMapping
+    @GetMapping("/")
     public String create(Model model){
         model.addAttribute("courses" , courseService.getAllCourses());
         model.addAttribute("registerCandidate" , new Candidate());

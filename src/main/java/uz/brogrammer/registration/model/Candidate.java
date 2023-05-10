@@ -21,9 +21,9 @@ public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @OneToOne
     @JoinColumn(name = "course_id" , referencedColumnName = "id" , nullable = false)
-    @ManyToMany
-    private Set<Course> course_id=new HashSet<>();
+    private Course course_id;
     private String name;
     private String lastName;
     private String phoneNumber;
