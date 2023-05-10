@@ -25,8 +25,7 @@ public class AdminController {
     @GetMapping
     public String candidates(Model model) {
         model.addAttribute("candidateList", candidateService.candidates());
-        model.addAttribute("courseList", courseService.getAllCourses()
-        );
+        model.addAttribute("courseList", courseService.getAllCourses());
         return "admin/admin-candidate-list.html";
     }
 

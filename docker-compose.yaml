@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-  db:
-    container_name: db
+  brogramm-db:
+    container_name: brogramm-db
     image: mysql
     ports:
       - "3306:3306"
-    restart: always
+#    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: brogrammers-team
-      MYSQL_USER: brogrammers
-      MYSQL_PASSWORD: BrogrammersMe10
-      MYSQL_ROOT_PASSWORD: Brogrammers_Root_pass
+      MYSQL_DATABASE: brogrammers-registration
+      MYSQL_ROOT_USER: root
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: admin
     networks:
       [brogrammers-team-net]
 
@@ -22,13 +22,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    restart: always
+#    restart: unless-stopped
+
     depends_on:
-      - db
+      - brogramm-db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/brogrammers-team
-      SPRING_DATASOURCE_USERNAME: brogrammers
-      SPRING_DATASOURCE_PASSWORD: BrogrammersMe10
+      SPRING_DATASOURCE_URL: jdbc:mysql://brogramm-db:3306/brogrammers-registration?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
     networks:
       - brogrammers-team-net
 
