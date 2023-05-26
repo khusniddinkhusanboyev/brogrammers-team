@@ -28,17 +28,17 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     }
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user = User.withUsername("user")
+        /*UserDetails user = User.withUsername("user")
                 .password(passwordEncoder.encode("password"))
                 .roles("USER")
-                .build();
+                .build();*/
 
-        UserDetails admin = User.withUsername("khasanboy")
-                .password(passwordEncoder.encode("akbarov"))
+        UserDetails admin = User.withUsername("brogrammer")
+                .password(passwordEncoder.encode("admin"))
                 .roles("USER", "ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager( admin);
 
     }
     @Bean
